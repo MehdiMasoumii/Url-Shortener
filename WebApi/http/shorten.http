@@ -1,0 +1,12 @@
+@UserService_HostAddress = http://localhost:5000/api
+@Access_token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxNDAzMzE2MTAyOTMwMzY2NDY0IiwiZW1haWwiOiJ0ZXN0QGdtYWlsLmNvbSIsImp0aSI6IjQ3NGM0MDgzLWZmMTItNDk2NS05NDU5LTljM2MzODg4OGU0NiIsImV4cCI6MTc1NDY0NzYzMSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDozMDAwIn0.RNFbCm_-J5JGKfFeGtOwOh_HD1etq9agI6PzYcCoRb0
+
+POST {{UserService_HostAddress}}/shortener
+Content-Type: application/json
+Authorization: Bearer {{Access_token}}
+
+{
+  "originalUrl": "https://google.com"
+}
+
+###
