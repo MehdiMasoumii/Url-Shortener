@@ -10,3 +10,13 @@ Authorization: Bearer {{Access_token}}
 }
 
 ###
+
+DELETE {{UserService_HostAddress}}/shortener
+Content-Type: application/json
+Authorization: Bearer {{Access_token}}
+
+{
+  "originalUrl": "https://google.com"
+}
+
+###

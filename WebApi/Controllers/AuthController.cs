@@ -49,6 +49,7 @@ public class AuthController(
         
         var accessToken = jwtService.GenerateAccessToken(newUser);
         var refreshToken = jwtService.GenerateRefreshToken(newUser);
+        
         return Ok(new
         {
             newUser.Id,

@@ -1,0 +1,7 @@
+@UserService_HostAddress = http://localhost:5000
+@Short_Url = 00k7b76zZx
+
+GET {{UserService_HostAddress}}/{{Short_Url}}
+Content-Type: application/json
+
+###
