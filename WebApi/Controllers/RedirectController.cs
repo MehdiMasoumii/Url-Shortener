@@ -12,6 +12,16 @@ public class RedirectController(
     PublisherService publisherService
     ): ControllerBase
 {
+    
+    [HttpGet]
+    [Route("test/test")]
+    public async Task<IActionResult> OpenShortLink1()
+    {
+        await redirectService.CacheTopClickUrlsAsync();
+        return Ok();
+    }
+    
+    
     [HttpGet]
     [Route("{shortUrl}")]
     public async Task<IActionResult> OpenShortLink([FromRoute] string shortUrl)
@@ -27,15 +37,14 @@ public class RedirectController(
             var clickMessage = new ClickEvent
             {
                 Ip = ip,
-                ShortUrl = url.ShortUrl,
+                ShortUrl = shortUrl,
                 UserAgent = userAgent,
                 Timestamp = DateTime.UtcNow,
             };
             await publisherService.PublishAsync("Click_Event", clickMessage);
-            return RedirectPermanent(url.OriginalUrl);
+            return RedirectPermanent(url);
         }
 
         return BadRequest();
     }
-    
 }

@@ -30,7 +30,14 @@ public class AppDbContext
                 new CreateIndexOptions { Unique = true, Name = "ShortUrl_Unique_Index" }
             );
         
+        // var clickIndex = Builders<Click>.IndexKeys.Ascending(c => c.ShortUrl);
+        // var clickIndexModel = new CreateIndexModel<Click>(
+        //     clickIndex,
+        //         new CreateIndexOptions { Unique = false, Name = "Click_ShortUrl_Index" }
+        //     );
+        
         Urls.Indexes.CreateOne(shortUrlIndexModel);
+        // Clicks.Indexes.CreateOne(clickIndexModel);
         Users.Indexes.CreateOne(userEmailIndexModel);
     }
 }

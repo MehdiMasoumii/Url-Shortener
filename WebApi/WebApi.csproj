@@ -16,10 +16,7 @@
         <PackageReference Include="MongoDB.Driver" Version="3.4.2" />
         <PackageReference Include="RabbitMQ.Client" Version="7.1.2" />
         <PackageReference Include="SimpleBase" Version="5.4.1" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Middlewares\" />
+        <PackageReference Include="StackExchange.Redis" Version="2.8.58" />
     </ItemGroup>
 
     <ItemGroup>

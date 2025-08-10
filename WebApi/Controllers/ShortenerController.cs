@@ -7,6 +7,7 @@ using WebApi.Services;
 namespace WebApi.Controllers;
 
 [ApiController]
+[Authorize]
 [Route("api/[controller]")]
 public class ShortenerController(
     IHttpContextAccessor ctx,
@@ -15,7 +16,6 @@ public class ShortenerController(
 {
 
     [HttpPost]
-    [Authorize]
     public async Task<IActionResult> ShortenerUrl([FromBody] ShortenerDto body)
     {
         var id = ctx.HttpContext?.User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
