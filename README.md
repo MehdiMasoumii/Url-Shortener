@@ -47,11 +47,6 @@ docker compose -f compose.yaml up -d
 dotnet run --project WebApi
 ```
 
-4. **تست API با Postman**
-   - `POST /api/urls` → کوتاه کردن لینک
-   - `GET /{shortCode}` → ریدایرکت به لینک اصلی
-
----
 
 ## 🛡 Rate Limiting با Redis + Lua
 
