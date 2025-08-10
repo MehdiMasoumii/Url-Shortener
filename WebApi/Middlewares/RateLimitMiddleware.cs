@@ -18,7 +18,7 @@ public class RateLimitMiddleware(RequestDelegate next, IConnectionMultiplexer co
             if (long.TryParse(id, out var userId))
             {
                 var bucketSize = rateLimitOptions.Value.BucketSize;
-                var refillTime = rateLimitOptions.Value.RefillTime;
+                var refillTime = rateLimitOptions.Value.RefillTimeSeconds;
                 var dateOffsetNow = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
                 var ttl = bucketSize * refillTime;
                 
